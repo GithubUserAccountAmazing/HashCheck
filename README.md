@@ -2,7 +2,7 @@
 
 ----
 
-This uses AHK to call PowerShell to call VBscript to open a single instance excel file (after verifying the sha256 of the excel file!)
+This uses AHK to call PowerShell to call VBscript to open a single instance excel file (after verifying the sha256 of the excel file!) which itself can then run a Workbook_Open vba script.
 
 An interesting property of this script is that the excel file [excel.xlsm] will be opened as [excel1.xlsx]. This quirck will allow you to run VBA macros regardless of your macro security settings. 
 This can be useful when using excel as a 'display manager' for a program and you don't want the user to have access to standard excel functionality.
