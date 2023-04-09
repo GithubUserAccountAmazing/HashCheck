@@ -30,7 +30,8 @@ To install this program, follow these steps:
 
     - Optional: Use a custom icon for the executable to distiguish the program you are creating.
  
-6. Run the executable
+6. Store the executable in a location where only approved users have write access.
+7. You can now run the executable
 
 ## Usage
 
@@ -42,4 +43,20 @@ Once you run the HashCheck-And-Run.ahk file, you will see a splash screen with a
 
 At this point, your excel file should be opened and ready to run its Workbook_Open vba script.
 
+
+## License
+```
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
 
