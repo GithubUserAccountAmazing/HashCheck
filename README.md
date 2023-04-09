@@ -8,7 +8,7 @@ This program has some interesting features and benefits:
 - It checks the sha256 of the excel file before opening it, which ensures that the file has not been tampered with or corrupted.
 - It imports a certificate to the TrustedPublisher store, which prevents any security warnings or prompts when running the VBA macros.
 
-This program is very convoluted and very niche, but it can be very powerful when used correctly.
+You may be concerned that allowing users to override user macro settings is a security risk; however, many organizations grant their users full control over VBA. This tool allows you to restrict users to specific workbooks and their associated VBA scripts while still keeping Macros disabled. This is not a flawless solution, but it is more secure than allowing users to run any script and also safeguards your Excel file from accidental changes.
 
 ## Installation
 
@@ -29,6 +29,7 @@ To install this program, follow these steps:
 5. Click Convert
 
     - Optional: Use a custom icon for the executable to distiguish the program you are creating.
+ 
 6. Run the executable
 
 ## Usage
