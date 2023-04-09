@@ -4,7 +4,7 @@ This is a program that leverages AutoHotkey (AHK), PowerShell and VBScript to se
 
 This program has some interesting features and benefits:
 
-- It opens the excel file as a template of the original xlsm file, which allows you to run VBA macros regardless of your macro security settings. This can be useful when using excel as a 'display manager' for a program and you don't want the user to have access to standard excel functionality.
+- It opens the excel file as a template of the original xlsm file, which allows you to run VBA macros regardless of your macro security settings. This can be useful when using excel as a 'display manager' for a program and you don't want the user to have access to standard excel functionality. Also this prevents a user from modifying the Excel file.
 - It checks the sha256 of the excel file before opening it, which ensures that the file has not been tampered with or corrupted.
 - It imports a certificate to the TrustedPublisher store, which prevents any security warnings or prompts when running the VBA macros.
 
