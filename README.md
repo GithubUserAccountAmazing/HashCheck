@@ -1,6 +1,6 @@
 ![image](https://github.com/originates/HashCheck-and-Run/blob/main/hashcheck.png)
 
-This is a program that uses AHK to call PowerShell to call VBscript to open a single instance excel file (after verifying the sha256 of the excel file!) which itself can then run a Workbook_Open vba script.
+This is a program that uses AHK to call PowerShell to call VBscript to open a single instance excel file (after verifying the sha256 of the excel file!) which itself can then run a Workbook_Open VBA script.
 
 This program has some interesting features and benefits:
 
