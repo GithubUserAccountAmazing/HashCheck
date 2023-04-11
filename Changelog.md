@@ -5,6 +5,7 @@
 - Changed the method of calculating the SHA256 hash of the file and the certificate from certUtil.exe to Get-FileHash cmdlet
 - This improves the security and reliability of the script
 - No changes to the functionality or logic of the script
+- Changed formatting, added comments.
 
 ## [1.0.0] - 2022-07-07
 ### Added
