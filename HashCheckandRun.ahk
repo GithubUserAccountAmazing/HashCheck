@@ -30,7 +30,7 @@
 ;           If you forget to update the hash the file will not open and a message box will alert
 ;           the user that The integrity of this program is suspect and the program will abort.
 ;    	        To get the SHA256 hash of your file open powershell and use the following command:
-;        	echo $(certUtil.exe -hashfile "fileLocation" SHA256)[1]
+;        	echo $(Get-FileHash -Algorithm SHA256 -Path \"%fileLocation%\").Hash
 
 
 fileLocation = \path\to\file
@@ -40,7 +40,7 @@ fileHash = xxxxxxxxxxxxxxxxxxxxxxx
 ;--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;
 ;    This is only needed if you want to add a certificate to the user's trusted publishers.
-;    	remove this part from psScript if not needed: " -And $(certUtil.exe -hashfile \"%certLocation%\" SHA256)[1] -eq '%certHash%'"
+;    	remove this part from psScript if not needed: " -And (Get-FileHash -Algorithm SHA256 -Path \"%certLocation%\").Hash -eq '%certHash%')
 
 
 certLocation = \path\to\certfile.cer
@@ -64,7 +64,7 @@ Winset, TransColor, Black, nameofimage
 
 psScript =
 (
-	if ($(certUtil.exe -hashfile \"%fileLocation%\" SHA256)[1] -eq '%fileHash%' -And $(certUtil.exe -hashfile \"%certLocation%\" SHA256)[1] -eq '%certHash%') {
+	if ((Get-FileHash -Algorithm SHA256 -Path \"%fileLocation%\").Hash -eq '%fileHash%' -And (Get-FileHash -Algorithm SHA256 -Path \"%certLocation%\").Hash -eq '%certHash%') {
 		start-job {  
 			Import-Certificate -FilePath \"%certLocation%\" -CertStoreLocation \"Cert:\CurrentUser\TrustedPublisher\" 
 			$sc = New-Object -ComObject MSScriptControl.ScriptControl.1
