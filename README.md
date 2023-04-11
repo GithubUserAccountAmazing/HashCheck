@@ -37,12 +37,11 @@ To install this program, follow these steps:
 
 Once you run the HashCheck-And-Run.ahk file, you will see a splash screen with an image of your choice. The program will then perform the following actions:
 
-- It will use certUtil.exe to check the sha256 hash of your excel file and compare it with the one you specified in the fileHash variable. If they match, it will proceed to the next step. If they don't match, it will display an error message and exit.
+- It will use Get-FileHash to check the sha256 hash of your excel file and compare it with the one you specified in the fileHash variable. If they match, it will proceed to the next step. If they don't match, it will display an error message and exit.
 - It will use Import-Certificate to import your certificate file to the TrustedPublisher store of your current user. This will allow you to run your VBA macros without any security warnings or prompts.
 - It will use MSScriptControl.ScriptControl.1 to create an object that can execute VBscript code. It will then create an Excel application object, disable its alerts and visibility, and open your excel file as a template. It will then make the Excel application visible so you can see and interact with it.
 
 At this point, your excel file should be opened and ready to run its Workbook_Open vba script.
-
 
 ## License
 ```
