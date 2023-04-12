@@ -46,11 +46,12 @@ SplashImage, \path\to\splashimage,b,,,nameofimage
 Winset, TransColor, Black, nameofimage
 
 ; Define a PowerShell script as a variable
+; Compare the hashes of the file and the certificate with the expected values
+; If the hashes match, import the certificate to the trusted publisher store and run the Excel macro from the file
+; If the hashes do not match, display a message box that warns the user about the integrity of the file
 psScript =
 (
-	; Compare the hashes of the file and the certificate with the expected values
 	if ((Get-FileHash -Algorithm SHA256 -Path \"%fileLocation%\").Hash -eq '%fileHash%' -And (Get-FileHash -Algorithm SHA256 -Path \"%certLocation%\").Hash -eq '%certHash%') {
-		; If the hashes match, import the certificate to the trusted publisher store and run the Excel macro from the file
 		start-job {  
 			Import-Certificate -FilePath \"%certLocation%\" -CertStoreLocation \"Cert:\CurrentUser\TrustedPublisher\" 
 			$sc = New-Object -ComObject MSScriptControl.ScriptControl.1
@@ -64,7 +65,6 @@ psScript =
 			')
 		} -runas32 | wait-job | receive-job
 	}else{
-		; If the hashes do not match, display a message box that warns the user about the integrity of the file
 		start-job {  
 			$sc = New-Object -ComObject MSScriptControl.ScriptControl.1
 			$sc.Language = 'VBScript'
